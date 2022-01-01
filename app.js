@@ -1,10 +1,33 @@
 const express = require("express");
 const ejs = require("ejs");
 const mysql = require("mysql");
+const Connection = require("mysql/lib/Connection");
 const app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
+
+
+var coonection = mysql.createConnection(
+  {
+  host: "127.0.0.1",
+  user: "root",
+  password: "happybarca1011",
+  database: "Grocerydb"
+  }
+);
+
+coonection.connect(function(err){
+  if (err){
+    console.log(err);
+  }
+  else{
+    console.log("Database connected successfully");
+  }
+})
+
+
+
 app.get("/",function(req,res){
   res.render("Home")
 });
