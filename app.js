@@ -41,6 +41,22 @@ app.get("/SignIn",function(req,res){
   res.render("SignIn")
 });
 app.post("/SignIn",function(req,res){
+  var email = req.body.Email;
+  var FullName = req.body.FullName;
+  var UserName = req.body.CompanyName;
+  var Password = req.body.Password;
+  var Register = "Insert into Users(FullName,UserName,Email,Password) VALUES ('"+FullName+"','"+UserName+"','"+email+"','"+Password+"')";
+  coonection.query(Register,function(err,result){
+    if (err){
+      console.log(err);
+    }
+    else{
+      console.log("Successfully registered");
+      res.render("Insert");
+    }
+  })
+})
+app.post("/SignIn",function(req,res){
   res.redirect("/Insert");
 });
 app.get("/Insert",function(req,res){
@@ -62,7 +78,7 @@ app.post("/Insert",function(req,res){
       console.log("Added successfully")
     }
   })
-  res.render("Insert");
+   res.redirect("/Database")
 });
 app.get("/Database",function(req,res){
   var data = "select * from Items";
