@@ -38,7 +38,19 @@ app.get("/Login",function(req,res){
   res.render("Login");
 })
 app.post("/Login",function(req,res){
-  
+  var email = req.body.Email;
+  console.log(email);
+  var Login = "select* from Users where Email = ?"
+  coonection.query(Login,[email],function(err,result){
+    if (result.length != 0){
+      console.log("Logged")
+      res.render("Insert");
+    }
+    else{
+      console.log("hahah")
+      res.redirect("/SignIn");
+    }
+  })
 })
 app.get("/SignIn",function(req,res){
   res.render("SignIn")
