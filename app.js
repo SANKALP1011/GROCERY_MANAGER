@@ -48,11 +48,39 @@ app.get("/Insert",function(req,res){
 });
 app.post("/Insert",function(req,res){
   console.log(req.body.Name);
+  var Id = req.body.Id
+  var name = req.body.Name;
+  var Type = req.body.Type;
+  var Qty = req.body.Qty;
+  var Price = req.body.Price;
+  var Add = "Insert into Items(Id,Name,Type,Qty,Price) VALUES ('"+Id+"','"+name+"','"+Type+"','"+Qty+"','"+Price+"')";
+  coonection.query(Add,function(err,result){
+    if (err){
+      console.log(err);
+    }
+    else{
+      console.log("Added successfully")
+    }
+  })
   res.render("Insert");
 });
 app.get("/Database",function(req,res){
-  res.render("Database")
+  var data = "select * from Items";
+  coonection.query(data,function(err,result,data){
+    if (err){
+      console.log(err)
+    }
+    else{
+      console.log(result)
+      res.render("Database",{
+        DatabaseItem : result
+      });
+    }
+  })
 });
+app.post("/Database",function(req,res){
+
+})
 app.listen("3000",function(){
     console.log("server and uo running");
 })
