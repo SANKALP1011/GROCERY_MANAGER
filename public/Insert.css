@@ -28,7 +28,7 @@ body{
     text-align: center;
 }
 .AddButton{
-    margin-left: 2%;
+   margin: 2% 2% 2% 2%;
 }
 input[type="text"]{
     border: black;

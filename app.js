@@ -68,18 +68,28 @@ app.get("/Database",function(req,res){
   var data = "select * from Items";
   coonection.query(data,function(err,result,data){
     if (err){
-      console.log(err)
+      console.log(err)  
     }
     else{
-      console.log(result)
       res.render("Database",{
         DatabaseItem : result
       });
     }
   })
 });
-app.post("/Database",function(req,res){
-
+app.get("/Delete/:ID",function(req,res){
+  var id = req.params.ID;
+  console.log(id)
+  var query = 'Delete from Items where id = ?';
+  coonection.query(query,[id],function(err,data){
+    if (err){
+      console.log(err);
+    }
+    else{
+      console.log("Deleted from the database")
+    }
+    res.redirect("/Database")
+  })
 })
 app.listen("3000",function(){
     console.log("server and uo running");

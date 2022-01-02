@@ -13,41 +13,48 @@
 </head>
 <body>
     <form action="/Database">
+      <%- include('header1.ejs'); -%>
+      <div class="TableBox shadow-2xl">
         <div class="Database">
-            <table class="table table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">SNO</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">NAME</th>
-                    <th scope="col">TYPE</th>
-                    <th scope="col">QTY</th>
-                    <th scope="col">PRICE</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <%
-                  if(DatabaseItem.length!=0){
-                  var i=1;
-                  DatabaseItem.forEach(function(data){
-                  %>
-                  <tr>
+          <H1 class="MainText">DATABASE</H1>
+          <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">SNO</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">NAME</th>
+                  <th scope="col">TYPE</th>
+                  <th scope="col">QTY</th>
+                  <th scope="col">PRICE</th>
+                  <th scope="col">DELETE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%
+                if(DatabaseItem.length!=0){
+                var i=1;
+                DatabaseItem.forEach(function(data){
+                %>
+                <tr>
                     <th scope="row">1</th>
-                    <td><%= data.ID %></td>
-                    <td><%= data.Name %></td>
-                    <td><%= data.Type %></td>
-                    <td><%= data.Qty %></td>
-                    <td><%= data.Price %></td>
-                  </tr>
-                  <%  i++; }) %>
-        <% } else{ %>
-            <tr>
-                <td colspan="7">No Data Found</td>
-            </tr>
-        <% } %>
-        </tbody>
-              </table>
-        </div>
+                  <td><%= data.ID %></td>
+                  <td><%= data.Name %></td>
+                  <td><%= data.Type %></td>
+                  <td><%= data.Qty %></td>
+                  <td><%= data.Price %></td>
+                  <td><a href="/Delete/<%= data.ID %>" role="button"><i class="fas fa-trash"></i></a></td>
+                </tr>
+                <%  i++; }) %>
+      <% } else{ %>
+          <tr>
+              <td colspan="7">No Data Found</td>
+          </tr>
+      <% } %>
+      </tbody>
+            </table>
+      </div>
+      </div>
+       
     </form>
 </body>
 </html>

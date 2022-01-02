@@ -13,40 +13,14 @@
 </head>
 <body>
     <form action="/Insert" method="post">
-      
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <ul class="navbar-nav d-flex flex-row">
-        <!-- Icons -->
-        <li class="nav-item me-3 me-lg-0">
-          <a class="nav-link" href="/Database" role="button">
-            <i class="fas fa-database"></i>
-          </a>
-        </li>
-        <li class="nav-item me-3 me-lg-0">
-          <a class="nav-link" href="/" role="button">
-            <i class="fas fa-home"></i>
-          </a>
-        </li>
-        <!-- Icon dropdown -->
-    <div class="dropdown">
-      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-user"></i>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="/SignIn">Sign In</a></li>
-        <li><a class="dropdown-item" href="/Login">Log In</a></li>
-        <li><a class="dropdown-item" href="/">Home</a></li>
-      </ul>
-    </div>
-  </div>
-  </nav>
+    <%- include('header.ejs') -%>
         <div class="Insert shadow-2xl">
           <div class="row">
             <div class="col-lg-6 InsertInfo">
               <h1 class="InsertText">ADD</h1>
-              <P class="InsertSubText">Add your grocery and items here to manage.</P>
-              <P class="InsertSubText">Easily add and manage your grocery and items.</P>
+              <P class="InsertSubText">- Add your grocery and items here to manage.</P>
+              <P class="InsertSubText">- Easily add and manage your grocery and items.</P>
+              <P class="InsertSubText">- Click on the database icon to check your grocery and items.</P>
             </div>
           
               <div class="col-lg-6 AddForm">
