@@ -31,12 +31,15 @@ coonection.connect(function(err){
 app.get("/",function(req,res){
   res.render("Home")
 });
-app.post("/",function(req,res){
 
+app.post("/",function(req,res){
+  //Nothing for the post route.
 });
+
 app.get("/Login",function(req,res){
   res.render("Login");
-})
+});
+
 app.post("/Login",function(req,res){
   var email = req.body.Email;
   console.log(email);
@@ -47,7 +50,7 @@ app.post("/Login",function(req,res){
       res.render("Insert");
     }
     else{
-      console.log("hahah")
+      console.log("User not registered")
       res.redirect("/SignIn");
     }
   })

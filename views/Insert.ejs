@@ -24,7 +24,26 @@
             </div>
           
               <div class="col-lg-6 AddForm">
-                <input type="text" name="Id" placeholder="Item id..." class="FormBox">
+                <div class="bg-white py-6 rounded-md px-10 max-w-lg shadow-md">
+                  <div class="space-y-4 mt-6">
+                    <div class="w-full">
+                      <input type="text" placeholder="..Id" name="ID" class="px-4 py-2 bg-gray-50" />
+                    </div>
+                    <div class="w-full">
+                      <input type="text" placeholder="..Name" name="Name" class="px-4 py-2 bg-gray-50" />
+                    </div>
+                    <div class="w-full">
+                      <input type="text" placeholder="..Type" name="Type" class="px-4 py-2 bg-gray-50" />
+                    </div>
+                    <div class="w-full">
+                      <input type="text" placeholder="..Qunatity" name="Qty" class="px-4 py-2 bg-gray-50" />
+                    </div>
+                    <div class="w-full">
+                      <input type="text" placeholder="..Price" name="Price" class="px-4 py-2 bg-gray-50" />
+                    </div>
+                  </div>
+                </div>
+                <!-- <input type="text" name="Id" placeholder="Item id..." class="FormBox">
                 <br>
                 <input type="text" name="Name" placeholder="Name id..." class="FormBox">
                 <br>
@@ -33,7 +52,7 @@
                 <input type="text" name="Qty" placeholder="Item quantity..." class="FormBox">
                 <br>
                 <input type="text" name="Price" placeholder="Item price..." class="FormBox">
-                <br>
+                <br> -->
                 <form action="/Insert" method="post">
                 <button type="submit" name="Add"  class="FormBox AddButton bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"><i class="fas fa-shopping-cart fa-lg"></i></button>
               </form>

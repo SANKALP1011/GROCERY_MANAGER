@@ -12,24 +12,27 @@
 </head>
 <body>
     <form action="/" method="get">
+        <%- include('header.ejs')  -%> 
         <div class="Home">
              <div class="row">
-                 <div class="col-6">
-                     <h1>hhkhkjhkh</h1>
-                     <h1>hhkhkjhkh</h1>
-                     <h1>hhkhkjhkh</h1>
-                     <h1>hhkhkjhkh</h1>
-                     <h1>hhkhkjhkh</h1>
-                     <h1>hhkhkjhkh</h1>
-                     <a href="/Login" role="button">Log In</a>
-                     <a href="/SignIn" role="button">Sign In</a>
+                 <div class="col-lg-6">
+                     <h1 class="HeadingText">DATABASE MANGER</h1>
+                     <p class="SubText">- Manage your grocery and items database for a supermarket</p>
+                     <p class="SubText">- Works similar to the databas computer which is used by the big shops.</p>
+                     <p class="SubText">- Uses the old and good fashioned mysql as the database.</p>
+                     <p class="SubText">- Get started by registering with us.</p>
+                     <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="/Login" role="button" class="Link" style="text-decoration: none;">Log In</a>
+                      </button>
+                      <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="/SignIn" class="Link" role="button" style="text-decoration: none;">Sign In</a>
+                      </button>
                  </div>
-                 <div class="col-6">
+                 <div class="col-lg-6">
                     <lottie-player class="lottie" src="https://assets2.lottiefiles.com/packages/lf20_8vcvc00i.json" background="transparent"  speed="1"  style="width: 400px; height: 400px;" loop control autoplay></lottie-player>
                  </div>
              </div>
              </div>
-        </div>
     </form>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
