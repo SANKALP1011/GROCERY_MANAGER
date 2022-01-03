@@ -82,7 +82,7 @@ app.get("/Insert",function(req,res){
 });
 app.post("/Insert",function(req,res){
   console.log(req.body.Name);
-  var Id = req.body.Id
+  var Id = req.body.ID
   var name = req.body.Name;
   var Type = req.body.Type;
   var Qty = req.body.Qty;
