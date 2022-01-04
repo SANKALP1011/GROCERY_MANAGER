@@ -137,10 +137,18 @@ app.post("/Search",function(req,res){
       console.log(err)
     }
     else{
-      console.log(result);
+      for(var i = 0; i<result.length; i++){
+       res.render("Result",{
+         ID: result[i].ID,
+         Name: result[i].Name,
+         Type: result[i].Type,
+         Qty: result[i].Qty,
+         Price: result[i].Price
+       })
+      }
+      
     }
   })
-  res.redirect("/Search")
 })
 app.listen("3000",function(){
     console.log("server and uo running");
