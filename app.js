@@ -130,6 +130,16 @@ app.get("/Search",function(req,res){
 });
 app.post("/Search",function(req,res){
   console.log(req.body.SearchedText)
+  var SearchedName = req.body.SearchedText;
+  var SearchResult = "Select * from Items where Name = ?"
+  coonection.query(SearchResult,[SearchedName],function(err,result){
+    if (err){
+      console.log(err)
+    }
+    else{
+      console.log(result);
+    }
+  })
   res.redirect("/Search")
 })
 app.listen("3000",function(){
