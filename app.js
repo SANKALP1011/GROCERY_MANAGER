@@ -124,6 +124,13 @@ app.get("/Delete/:ID",function(req,res){
     }
     res.redirect("/Database")
   })
+});
+app.get("/Search",function(req,res){
+  res.render("Search");
+});
+app.post("/Search",function(req,res){
+  console.log(req.body.SearchedText)
+  res.redirect("/Search")
 })
 app.listen("3000",function(){
     console.log("server and uo running");
