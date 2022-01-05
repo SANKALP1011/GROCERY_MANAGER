@@ -1,4 +1,22 @@
 {
+  "name": "homedatabase",
+  "version": "1.0.0",
+  "description": "This the node pacakge for the web app.",
+  "main": "app.js",
+  "scripts": {
+      "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SANKALP1011/HOMEDATABASE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "git+https://github.com/SANKALP1011/HOMEDATABASE.git"
+  },
+  "homepage": "https://github.com/SANKALP1011/HOMEDATABASE#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2",
