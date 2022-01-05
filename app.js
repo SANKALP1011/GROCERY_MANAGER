@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
-var coonection = mysql.createConnection({
+var dbConfig = ({
   host: "us-cdbr-east-05.cleardb.net",
   user: "b9339d8e6ad7e8" ,
   password: "f5a0438b" ,
@@ -18,13 +18,30 @@ var coonection = mysql.createConnection({
 //   password: "happybarca1011",
 //   database:  "Grocerydb",
 // }); 
-coonection.connect(function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Database connected successfully");
+function handleDisconnect() {
+  coonection = mysql.createConnection(dbConfig); // Recreate the connection, since
+                                                  // the old one cannot be reused.
+
+  coonection.connect(function(err) {              // The server is either down
+    if(err) {                                     // or restarting (takes a while sometimes).
+      console.log('error when connecting to db:', err);
+      setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+    }
+    else{
+      console.log("Database connected successfully");
+    }                                  // to avoid a hot loop, and to allow our node script to
+  }); 
+coonection.on('error', function(err) {
+  console.log('db error', err);
+  if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+    handleDisconnect();                         // lost due to either server restart, or a
+  } else {                                      // connnection idle timeout (the wait_timeout
+    throw err;                                  // server variable configures this)
   }
 });
+}
+handleDisconnect();
+
 
 app.get("/", function (req, res) {
   res.render("Home");
