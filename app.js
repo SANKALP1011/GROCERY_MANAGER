@@ -10,7 +10,7 @@ var coonection = mysql.createConnection({
   host: "us-cdbr-east-05.cleardb.net",
   user: "b9339d8e6ad7e8" ,
   password: "f5a0438b" ,
-  database: "heroku_82e0818920d6a5b" ,
+  database: "heroku_82e0818920d6a5b" 
 });
 // var coonection = mysql.createConnection({
 //   host: "127.0.0.1",
