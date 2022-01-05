@@ -8,12 +8,17 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 var coonection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "happybarca1011",
-  database: "Grocerydb",
+  host: "us-cdbr-east-05.cleardb.net",
+  user: "b9339d8e6ad7e8" ,
+  password: "f5a0438b" ,
+  database: "heroku_82e0818920d6a5b" ,
 });
-
+// var coonection = mysql.createConnection({
+//   host: "127.0.0.1",
+//   user: "root",
+//   password: "happybarca1011",
+//   database:  "Grocerydb",
+// });
 coonection.connect(function (err) {
   if (err) {
     console.log(err);
