@@ -12,31 +12,32 @@ var dbConfig = ({
   password: "f5a0438b" ,
   database: "heroku_82e0818920d6a5b" 
 });
+    /* To run on your local machine */
+//Connection on the local machiene-: 
 // var coonection = mysql.createConnection({
 //   host: "127.0.0.1",
 //   user: "root",
 //   password: "happybarca1011",
 //   database:  "Grocerydb",
-// }); 
-function handleDisconnect() {
-  coonection = mysql.createConnection(dbConfig); // Recreate the connection, since
-                                                  // the old one cannot be reused.
 
-  coonection.connect(function(err) {              // The server is either down
-    if(err) {                                     // or restarting (takes a while sometimes).
+/* This handles the error when the database connection is lost */
+function handleDisconnect() {
+  coonection = mysql.createConnection(dbConfig);         //Creating and recreating the connection when the connection is lost or 
+  coonection.connect(function(err) {               // The server is either down
+    if(err) {                                           //  or restarting (takes a while sometimes).
       console.log('error when connecting to db:', err);
-      setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+      setTimeout(handleDisconnect, 2000);              // We introduce a delay before attempting to reconnect and solve the issue.
     }
     else{
-      console.log("Database connected successfully");
-    }                                  // to avoid a hot loop, and to allow our node script to
+      console.log("Database connected successfully");   //This lines shows if the database is connected successfully.
+    }                                  
   }); 
 coonection.on('error', function(err) {
   console.log('db error', err);
-  if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-    handleDisconnect();                         // lost due to either server restart, or a
-  } else {                                      // connnection idle timeout (the wait_timeout
-    throw err;                                  // server variable configures this)
+  if(err.code === 'PROTOCOL_CONNECTION_LOST') {        // If it gets the following error(when coonection is lost), then
+    handleDisconnect();                                // We will call the function and restart the connection again.
+  } else {                                             // Otherwise throw the error and then again the call the function.
+    throw err;                                         // Handles error
   }
 });
 }
