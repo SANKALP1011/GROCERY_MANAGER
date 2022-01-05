@@ -1,0 +1,11 @@
+body{
+    
+}
+.ResultBox{
+    margin: 15% 10% 10% 10%;
+    border-radius: 50px;
+}
+.Result{
+    color: #864879;
+    margin: 5% 2% 2% 2%;
+}
