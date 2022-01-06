@@ -20,4 +20,4 @@
 > MySql database , cleardb
 
 
-! [DIAGRAM] (/IMG-4794)
+! [DIAGRAM](/IMG-4794.JPG)
