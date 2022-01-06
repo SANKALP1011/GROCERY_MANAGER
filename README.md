@@ -19,5 +19,5 @@
 # Database
 > MySql database , cleardb
 
-
+# DIAGRAM OF THE WEB APP
 ![DIAGRAM](Diagram.JPG)
