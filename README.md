@@ -5,7 +5,7 @@
   -  Select
   -  Insert
   -  Delete
--Deployed on heroku.\
+- Deployed on heroku.\
 
  # Live Preview
 - https://shop-databasee.herokuapp.com
