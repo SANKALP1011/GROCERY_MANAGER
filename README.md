@@ -1,11 +1,11 @@
 # HOMEDATABASE
 - Complete mysql database app performing CRUD operation.
 - Web app which can be used by superstores and shop to manage their inventory.
-- Operations perfromed-:/
+- Operations perfromed-:
   -  Select
   -  Insert
   -  Delete
-- Deployed on heroku./
+- Deployed on heroku.
 
  # Live Preview
 - https://shop-databasee.herokuapp.com
