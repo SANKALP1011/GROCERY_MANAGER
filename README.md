@@ -5,18 +5,18 @@
   -  Select
   -  Insert
   -  Delete
+-Deployed on heroku.\
 
  # Live Preview
 - https://shop-databasee.herokuapp.com
 
--Deployed on heroku.\
-- For backend , I have used -:
+# Backend
 > Node.js , Express.js , MySql
 
-- For frontend , I have used -:
+# Frontend
 > HTML , CSS , JS , EJS
 
-- For database , I have used -:
+# Database
 > MySql database , cleardb
 
 
