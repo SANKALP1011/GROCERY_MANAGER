@@ -5,6 +5,8 @@ const ejs = require("ejs");
 /* Requiring mysql module */
 const mysql = require("mysql");
 /* creating app */
+const bycrpyt = require("bcrypt");
+/* creating app */
 const app = express();
 /* Express embeded body-parser */
 app.use(express.urlencoded({ extended: true }));
@@ -92,7 +94,8 @@ app.post("/SignIn", function (req, res) {
   var UserName = req.body.CompanyName;
   var Password = req.body.Password;
   //Adding the user to the database.
-  var Register =
+  bycrpyt.hash(Password,10,function(err,hash){
+    var Register =
     "Insert into Users(FullName,UserName,Email,Password) VALUES ('" +
     FullName +
     "','" +
@@ -100,7 +103,7 @@ app.post("/SignIn", function (req, res) {
     "','" +
     email +
     "','" +
-    Password +
+    hash +
     "')";
   coonection.query(Register, function (err, result) {
     if (err) {
@@ -110,6 +113,8 @@ app.post("/SignIn", function (req, res) {
       res.render("Insert");
     }
   });
+  })
+  
 });
 
 /* Insert Route */
