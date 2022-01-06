@@ -20,4 +20,4 @@
 > MySql database , cleardb
 
 # DIAGRAM OF THE WEB APP
-![DIAGRAM](Diagram.JPG)
+![DIAGRAM](Diagram.JPG width=100 heigth=100)
