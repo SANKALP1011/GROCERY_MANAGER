@@ -6,9 +6,9 @@
 - # Insert
 - # Delete
 
-- # Live Preview
+ # Live Preview
 - https://shop-databasee.herokuapp.com
-- 
+
 -Deployed on heroku.\
 -Link for the site -  https://shop-databasee.herokuapp.com
 
