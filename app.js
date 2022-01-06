@@ -173,6 +173,7 @@ app.get("/Delete/:ID", function (req, res) {
     res.redirect("/Database");
   });
 });
+
 /* Search Route */
 app.get("/Search", function (req, res) {
   res.render("Search");
@@ -185,6 +186,7 @@ app.post("/Search", function (req, res) {
   coonection.query(SearchResult, [SearchedName], function (err, result) {
     if (err) {
       console.log(err);
+      res.redirect("/Insert");
     } else {
       for (var i = 0; i < result.length; i++) {
         res.render("Result", {
@@ -198,6 +200,7 @@ app.post("/Search", function (req, res) {
     }
   });
 });
+
 /* Initialising the server */
 app.listen(process.env.PORT || "3001", function () {
   console.log("server and up running");
