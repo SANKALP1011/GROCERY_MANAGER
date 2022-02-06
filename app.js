@@ -28,7 +28,7 @@ var dbConfig = {
 // var coonection = mysql.createConnection({
 //   host: "127.0.0.1",
 //   user: "root",
-//   password: "happybarca1011",
+//   password: "",
 //   database:  "Grocerydb",
 
 /* This handles the error when the database connection is lost */
